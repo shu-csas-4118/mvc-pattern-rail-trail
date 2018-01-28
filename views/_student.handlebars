@@ -1,0 +1,13 @@
+{{#with data}}
+    <h1>Student Information</h1>
+    <h2>{{this.toString}}</h2>
+    <h2>Registered Classes:</h2>
+    <ul>
+        {{#each this.courses}}
+            <li>{{this.toString}}</li>
+            <ul>
+                <li>{{this.professor}}</li>
+            </ul>
+        {{/each}}
+    </ul>
+{{/with}}

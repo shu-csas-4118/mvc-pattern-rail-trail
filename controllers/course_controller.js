@@ -1,0 +1,31 @@
+const db = require('../models/mockDB');
+
+exports.description = "This is the the controller for Courses.";
+
+exports.printCourseDetails = (req, res) => res.render('_course', ({data: db.courses[req.params.id]}));
+
+exports.printAllCourses = (req, res) => res.render('_all_courses', ({data: db.courses}));
+
+exports.displayRegistrationForm = (req, res) => res.render('register',({course: db.courses, student: db.students}));
+
+exports.sayError = (req, res) => res.render('error');
+
+exports.handleRegistrationForm = function(req, res){
+    const body = req.body;
+    const student = body.studentID, course = body.courseID;
+
+    let s = db.students[student].courses;
+
+    let foundDuplicate = false;
+    for(let i = 0; i < s.length; i++) {
+        if (s[i].courseID === db.courses[course].courseID) {
+            foundDuplicate = true;
+            break;
+        }
+    }
+    if(!foundDuplicate) {
+        s.push(db.courses[course]);
+        res.redirect("/student/" + student);
+    }
+    else res.redirect("/error");
+};

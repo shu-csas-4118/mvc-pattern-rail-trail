@@ -1,0 +1,9 @@
+<h1>List of Available Courses</h1>
+<ul>
+    {{#each data}}
+        <li>{{this}}</li>
+        <ul>
+            <li>{{this.professor}}</li>
+        </ul>
+    {{/each}}
+</ul>

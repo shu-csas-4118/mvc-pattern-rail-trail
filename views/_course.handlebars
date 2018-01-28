@@ -1,0 +1,11 @@
+<h1>Course Information</h1>
+{{#with data}}
+    <ul>
+        <li>
+            {{this}}
+                <ul>
+                    <li>{{this.professor}}</li>
+                </ul>
+        </li>
+    </ul>
+{{/with}}
