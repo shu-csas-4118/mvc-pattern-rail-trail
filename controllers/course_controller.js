@@ -16,16 +16,10 @@ exports.handleRegistrationForm = function(req, res){
 
     let s = db.students[student].courses;
 
-    let foundDuplicate = false;
-    for(let i = 0; i < s.length; i++) {
-        if (s[i].courseID === db.courses[course].courseID) {
-            foundDuplicate = true;
-            break;
-        }
-    }
-    if(!foundDuplicate) {
+    if(s.includes(db.courses[course]))
+        res.redirect('/error');
+    else{
         s.push(db.courses[course]);
-        res.redirect("/student/" + student);
+        res.redirect('/student/' + student);
     }
-    else res.redirect("/error");
 };

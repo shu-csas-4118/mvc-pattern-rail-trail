@@ -1,5 +1,9 @@
 exports.student = function Student(firstName, lastName, ID, courses){
-    this.firstName = firstName || "";
+
+
+    this.firstName= firstName || "";
+
+
     this.lastName = lastName || "";
     this.ID = ID || 0;
     this.courses = courses || [];

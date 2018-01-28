@@ -1,14 +1,18 @@
-const express = require('express'),
-    path = require('path'),
-    handlebars = require('express-handlebars').create({defaultLayout: 'main'}),
-    bodyParse = require('body-parser');
+//Import Express / Middleware
+const express = require('express');
+const path = require('path');
+const handlebars = require('express-handlebars').create({defaultLayout: 'main'});
+const bodyParse = require('body-parser');
 
+//Import Controllers
 const studentController = require(path.join(__dirname, 'controllers', 'student_controller'));
 const professorController = require(path.join(__dirname, 'controllers', 'professor_controller'));
 const courseController = require(path.join(__dirname,'controllers', 'course_controller'));
 
+//Initiate Express
 const app = express();
 
+//Setup Express
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'views'));
@@ -34,8 +38,8 @@ app.use((req, res) => {res.status(404).render('404');});
 
 function begin(){
     const port = '7070';
-    app.listen(port || 7070);
+    app.listen(port);
     console.log("Listening on port " + port);
 }
-
+//Launch Server
 begin();
