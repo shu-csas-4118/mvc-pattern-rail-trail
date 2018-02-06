@@ -6,8 +6,8 @@ exports.course = function(courseName, courseID, credits, professor){
     this._credits = credits || -999;
     this._professor = professor || null;
 
-    this.toString = () => { return "Course Name: " + this.courseName + " | Course ID: " + this.courseID
-        + " | Credits: " + this.credits; };
+    this.toString = () => { return "Course Name: " + this._courseName + " | Course ID: " + this._courseID
+        + " | Credits: " + this._credits; };
 
     this.setCourseName = (name) => {this._courseName = name; return this;};
     this.getCourseName = () => {return this._courseName;};

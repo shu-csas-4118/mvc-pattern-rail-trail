@@ -18,3 +18,5 @@ courses.push(new Course("Intro to Programming", 1101, 4, professors[1]));
 students.push(new Student("Adriano", "Soares", 11215853, [courses[0], courses[1]]));
 students.push(new Student("Garett", "Chang", 12313213, [courses[1], courses[2]]));
 students.push(new Student("Eileen", "Dover", 98360172, [courses[0], courses[2]]));
+
+

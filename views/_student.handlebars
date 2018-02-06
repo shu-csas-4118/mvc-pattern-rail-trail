@@ -3,10 +3,10 @@
     <h2>{{this.toString}}</h2>
     <h2>Registered Classes:</h2>
     <ul>
-        {{#each this.courses}}
+        {{#each this.getCourses}}
             <li>{{this.toString}}</li>
             <ul>
-                <li>{{this.professor}}</li>
+                <li>{{this.getProfessor}}</li>
             </ul>
         {{/each}}
     </ul>

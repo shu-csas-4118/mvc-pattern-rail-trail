@@ -4,14 +4,14 @@
     <label for = 'students'>Student:</label>
     <select name = 'studentID' id="students">
         {{#each student}}
-            <option value = {{@index}}>{{this.firstName}} {{this.lastName}}</option>
+            <option value = {{@index}}>{{this.getFirstName}} {{this.getLastName}}</option>
         {{/each}}
     </select>
 
     <label for = 'courses'>Class:</label>
     <select name = 'courseID' id = 'courses'>
         {{#each course}}
-            <option value = {{@index}}>{{this.courseName}}</option>
+            <option value = {{@index}}>{{this.getCourseName}}</option>
         {{/each}}
     </select>
 
