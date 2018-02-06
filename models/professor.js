@@ -10,7 +10,7 @@ exports.professor = function(firstName, lastName, email, phoneNum){
             " | Email: " + this._email + " | Number: " + this._phoneNum; };
 
     this.getFirstName = () => {return this._firstName};
-    this.setFirstName = (name) => {this._firstName = name};
+    this.setFirstName = (name) => {this._firstName = name; return this;};
 
     this.getEmail = () => {return this._email};
     this.setEmail = (em) => {this._email = em; return this;};
