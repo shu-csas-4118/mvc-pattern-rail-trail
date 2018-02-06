@@ -14,7 +14,7 @@ exports.handleRegistrationForm = function(req, res){
     const body = req.body;
     const student = body.studentID, course = body.courseID;
 
-    let s = db.students[student].courses;
+    let s = db.students[student].getCourses();
 
     if(s.includes(db.courses[course]))
         res.redirect('/error');
